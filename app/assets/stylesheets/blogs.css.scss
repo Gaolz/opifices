@@ -35,3 +35,19 @@
     background: #fafbfb;
   }
 }
+.bdsharebuttonbox{
+  padding: 10px 0;
+  .fa{
+    font-size: 20px;
+    margin: 5px;
+    color: #bfbfbf;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  .fa-weixin:hover{color:#609700}
+  .fa-weibo:hover{color:#e6162d}
+  .fa-qq:hover{color:#059}
+  .fa-twitter:hover{color:#55acee}
+  .fa-facebook:hover{color:#45619d}
+}

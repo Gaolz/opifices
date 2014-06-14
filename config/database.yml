@@ -51,4 +51,6 @@ production:
   <<: *default
   database: opifices_production
   username: opifices
+  host:  <%= ENV['RDS_HOST'] %>
+  username: <%= ENV['OPIFICES_DATABASE_USERNAME'] %>
   password: <%= ENV['OPIFICES_DATABASE_PASSWORD'] %>

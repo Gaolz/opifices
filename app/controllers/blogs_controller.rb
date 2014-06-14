@@ -1,4 +1,5 @@
 class BlogsController < ApplicationController
+  caches_page :show
   def index
     @blogs = Blog.page(params[:page])
     params[:page].blank? ? @page_title = '首页' : @page_title = "第#{params[:page]}页"

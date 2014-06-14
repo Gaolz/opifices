@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="90624241">
+    <data-source source="LOCAL" name="Rails opifices: production" uuid="5f6a3aac-dc8e-4768-9114-d7a2eeb3e199">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://&lt;%= ENV['RDS_HOST'] %&gt;/opifices_production</jdbc-url>
+      <user-name>opifices</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddfe5dffadfe3dfecdfe3dfe9dfefdff9dff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
