@@ -1,0 +1,44 @@
+<%= form_for @blog,url: url, validate: true, html: {role: 'form'} do |f| %>
+    <hr/>
+    <div class="form-group">
+      <%= f.label :category_id %>
+      <%= f.collection_select :category_id, Category.all,:id,:name , class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :title %>
+      <%= f.text_field :title, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+      <%= f.label :slug_url %>
+      <%= f.text_field :slug_url, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :thumb %>
+      <%= f.file_field :thumb,validate: false %>
+      <%= f.hidden_field :thumb_cache %>
+      <%= content_tag :div,image_tag(@blog.thumb.url,class: 'img-thumbnail'),class: 'help-block'  if @blog.thumb? %>
+    </div>
+    <div class="form-group">
+      <%= f.label :context %>
+      <%= f.text_area :context, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :reference_url %>
+      <%= f.url_field :reference_url, class: 'form-control' %>
+    </div>
+    <hr/>
+    <div class="form-group">
+      <%= f.submit '提交', class: 'btn btn-primary',data: { disable_with: '正在提交...'} %>
+    </div>
+<% end %>
+
+<script>
+    $(document).ready(function () {
+        new Simditor({
+            textarea: $('#blog_context'),
+            upload: {
+                url: '<%= console_photo_upload_path %>'
+            }
+        });
+    });
+</script>

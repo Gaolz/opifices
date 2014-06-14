@@ -1,0 +1,57 @@
+body{
+  background: #f2f2f2;
+}
+
+
+header.navbar-default {
+  background-color: #fff;
+  .navbar-brand{
+    background: image_url('https://dn-opifices.qbox.me/logo.png') no-repeat;
+    width: 100px;
+    padding: 0;
+    margin-right: 25px;
+  }
+  .navbar-nav > li > a{
+    color: #666;
+    font-weight: 500;
+    font-size: 15px;
+    &:hover{
+      color: #000;
+    }
+  }
+}
+
+#sidebar{
+  .widget{
+    margin-bottom: 25px;
+    float: left;
+    clear: both;
+    width: 100%;
+    h3{
+      font-size: 16px;
+      line-height: 100%;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+  }
+  #namecard{
+    text-align: center;
+    h5{
+      font-size: 16px;
+      margin-top: 30px;
+    }
+    p{
+      ont-size: 14px;
+      line-height: 20px;
+      color: #8c8a8a;
+    }
+  }
+}
+footer{
+  text-align: center;
+  font-size: 12px;
+  padding: 8px;
+  color:#555;
+  line-height: 25px;
+}

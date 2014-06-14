@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div id="main" class="col-md-8 col-xs-12">
+      <div class="panel panel-blog">
+        <div class="panel-heading">
+         <h1><%= content_tag :div,show_date(@blog.created_at),class:'date'  %>
+          <%= @blog.title %></h1>
+        </div>
+        <div class="panel-body type">
+          <%= sanitize @blog.context %>
+        </div>
+        <% unless @blog.reference_url.blank? %>
+        <div class="panel-footer">
+          <blockquote>
+            本文转载自互联网，版权归原作者所有。 <%= link_to '[点此查看原文]',@blog.reference_url,rel:'nofollow',target: '_blank' %>
+          </blockquote>
+        </div>
+        <% end %>
+      </div>
+    </div>
+<%= render partial:'sidebar' %>
+</div>
+</div>

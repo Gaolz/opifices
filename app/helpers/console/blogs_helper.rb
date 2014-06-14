@@ -1,0 +1,2 @@
+module Console::BlogsHelper
+end

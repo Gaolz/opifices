@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3>文章管理 <%= ilink_to '新增',new_console_blog_path,class: 'btn btn-primary',icon:'plus'  %>
+      </h3>
+    </div>
+    <div class="panel-body">
+      <div class="btn-group">
+      </div>
+      <hr>
+      <table cellspacing="0" class="table table-bordered table-striped table-hover">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>分类</th>
+          <th>标题</th>
+          <th>操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @blogs.each do |blog| %>
+            <tr>
+              <td><%= blog.id %></td>
+              <td><%= blog.category.name %></td>
+              <td><%= blog.title%> </td>
+              <td>
+                <%= link_to '编辑', edit_console_blog_path(blog.id), class: 'btn btn-info' %>
+                <%= link_to '删除', console_blog_path(blog.id), class: 'btn btn-danger', method: 'delete', data:{confirm: '该操作不可逆，确定要删除吗？'} %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+      <div class="panel-footer"> <%= paginate @blogs %> </div>
+    </div>
+  </div>
+</div>

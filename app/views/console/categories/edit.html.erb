@@ -1,0 +1,9 @@
+<%= render 'shared/form_error_msg', :target => @category %>
+<div class="container">
+  <div class="panel panel-default">
+   <%= content_tag :div,"编辑 #{@category.name} 分类",class:'panel-heading' %>
+    <div class="panel-body">
+      <%= render partial:'form', locals:{url: console_category_path} %>
+    </div>
+  </div>
+</div>

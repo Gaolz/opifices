@@ -1,0 +1,15 @@
+<%= form_for @category,url: url, validate: true, html: {role: 'form'} do |f| %>
+    <hr/>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :desc %>
+      <%= f.text_field :desc, class: 'form-control' %>
+    </div>
+    <hr/>
+    <div class="form-group">
+      <%= f.submit '提交', class: 'btn btn-primary',data: { disable_with: '正在提交...'} %>
+    </div>
+<% end %>

@@ -1,0 +1,9 @@
+<%= render 'shared/form_error_msg', :target => @blog %>
+<div class="container">
+  <div class="panel panel-default">
+    <div class="panel-heading">添加新分类</div>
+    <div class="panel-body">
+      <%= render partial:'form', locals:{url: console_blogs_path} %>
+    </div>
+  </div>
+</div>

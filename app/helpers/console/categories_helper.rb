@@ -1,0 +1,2 @@
+module Console::CategoriesHelper
+end

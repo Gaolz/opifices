@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div id="main" class="col-md-8 col-xs-12">
+      <% @blogs.each do |blog| %>
+        <div class="panel panel-blog">
+          <% unless blog.thumb.blank? %>
+          <div class="panel-img"><%= image_tag blog.thumb.url,class: 'img-responsive' %></div>
+          <% end %>
+          <div class="panel-heading"><h2><%= link_to blog.title,blog_path(blog.slug_url) %></h2></div>
+          <div class="panel-meta"><%= show_date(blog.created_at) %></div>
+          <div class="panel-body type">
+            <%= plaintext_summary blog.context %>
+          </div>
+          <div class="panel-footer">
+            <%= link_to '阅读全文',blog_path(blog.slug_url),class:'btn btn-danger' %></div>
+        </div>
+        <% end %>
+    </div>
+    <%= render partial:'sidebar' %>
+  </div>
+</div>

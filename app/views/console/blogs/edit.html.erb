@@ -1,0 +1,12 @@
+<%= render 'shared/form_error_msg', :target => @blog %>
+
+<div class="container">
+  <div class="panel">
+    <div class="panel-heading">
+      <%= content_tag :h3, "编辑#{@blog.title}" %>
+    </div>
+    <div class="panel-body">
+      <%= render partial:'form', locals:{url: console_blog_path} %>
+    </div>
+  </div>
+</div>
