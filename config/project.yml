@@ -12,5 +12,5 @@ test:
 
 production:
   <<: *defaults
-   admin_user:
+  admin_user:
     linearsky: <%= ENV['BLOG_LINEARSKY_PASSWD'] %>
