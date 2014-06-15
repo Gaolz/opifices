@@ -1,12 +1,12 @@
 class BlogsController < ApplicationController
   caches_page :show
   def index
-    @blogs = Blog.order(created_at: :desc).page(params[:page])
+    @blogs = Blog.order(created_at: :desc).page(params[:page]).per(6)
     params[:page].blank? ? @page_title = '首页' : @page_title = "第#{params[:page]}页"
   end
 
   def category
-    @category = Category.find params[:id]
+    @category = Category.find params[:id].per(6)
     if @category
       @page_title = @category.name
       @blogs = Blog.order(created_at: :desc).where(category_id: @category.id).page(params[:page])

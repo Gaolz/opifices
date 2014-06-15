@@ -1,14 +1,16 @@
 development: &defaults
   sitename: 匠人线 - 手线's Blog,游离于科技和人文的十字路口
   admin_user: # Digest::MD5.hexdigest(%w($uname$ Authorization $password$).join(':'))
-    root: a9984d57406b9b0c5b1b395f084bff9a
+    root: e904e0e6af2d0681dc5c259dde85fe34 #默认密码ruby
   qiniu:
     bucket: opifices
-    access: KwUmpE2gjve5fJlyndgcqBizoeN2zzqJC0FBjU_D
-    secret: DBaQh2KRmnX7sjlQZfe8bw3uQZ_kw551ccPxBxqf
+    access: <%= ENV['QINIU_ACCESS'] %>
+    secret: <%= ENV['QINIU_SECRET'] %>
     domain: dn-opifices.qbox.me
 test:
   <<: *defaults
 
 production:
   <<: *defaults
+   admin_user:
+    linearsky: <%= ENV['BLOG_LINEARSKY_PASSWD'] %>
