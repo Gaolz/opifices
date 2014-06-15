@@ -3380,7 +3380,8 @@
             lang = $pre.attr('data-lang');
             $pre.removeClass();
             if (lang && lang !== -1) {
-                return $pre.addClass('hljs ' + lang);
+                $pre.addClass('hljs');
+                return $pre.addClass(lang);
             }
         };
 
@@ -3389,7 +3390,8 @@
             lang = $pre.attr('data-lang');
             $pre.removeClass();
             if (lang && lang !== -1) {
-                return $pre.addClass('hljs ' + lang);
+                $pre.addClass('hljs');
+                return $pre.addClass(lang);
             }
         };
 
@@ -3472,7 +3474,8 @@
                 selected = _this.target.hasClass('selected');
                 _this.target.removeClass().removeAttr('data-lang');
                 if (_this.lang !== -1) {
-                    _this.target.addClass('hljs ' + _this.lang);
+                    _this.target.addClass('hljs');
+                    _this.target.addClass( _this.lang);
                     _this.target.attr('data-lang', _this.lang);
                 }
                 if (selected) {
