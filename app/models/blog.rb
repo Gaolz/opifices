@@ -1,6 +1,6 @@
 class Blog < ActiveRecord::Base
   validates :title, length: {:in => 2..50},presence:true
-  validates :slug_url,length: {:in => 1..50},presence: true,uniqueness: {case_sensitive: false}
+  validates :slug_url,length: {:in => 1..50},uniqueness: {case_sensitive: false}
   validates :context, length: {:in => 3..16777215},presence:true
   before_validation :clean_slug
   before_save :fill_slug
